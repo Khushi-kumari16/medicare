@@ -26,11 +26,13 @@ function DoctorAgentCard({doctor }: Props) {
         {/* Image wrapper to enforce consistent sizing */}
         <div className="w-[150px] h-[150px] relative mb-4">
           <Image
-            src={doctor.image}
-            alt={doctor.specialist}
-            fill
-            className="object-cover rounded-md"
-          />
+  src={doctor.image.startsWith('/') ? doctor.image : `/images/${doctor.image}`}
+  alt={doctor.specialist}
+  fill
+  sizes="150px"
+  className="object-cover rounded-md"
+/>
+
         </div>
         <h3 className="text-lg font-semibold">{doctor.specialist}</h3>
         <p className="text-sm text-gray-500 mt-2">{doctor.description}</p>

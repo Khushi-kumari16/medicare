@@ -26,6 +26,7 @@ type SessionDetail = {
   id: number;
   session_id: string;
   selectedDoctor: DoctorAgent;
+   suggestedDoctors?: DoctorAgent[];
   createdOn: string;
   report: MedicalReport;
 };
