@@ -8,7 +8,10 @@ import { desc, eq } from "drizzle-orm";
 // POST: Create a new session
 export async function POST(req: NextRequest) {
   const { notes, selectedDoctor, allSuggestions } = await req.json();
+  console.log("Getting user data from db...")
   const user = await currentUser();
+  console.log("data fetched from user")
+  console.log(user)
 
   try {
     const sessionId = uuidv4();
